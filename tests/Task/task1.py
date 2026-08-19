@@ -17,7 +17,6 @@ with sync_playwright() as p:
     assert products.count() > 0
     print('Products are displayed')
 
-
     page.get_by_text('Combination Pliers').click()
     print('Product selected')
     page.wait_for_timeout(3000)
