@@ -10,8 +10,10 @@ with sync_playwright() as p:
     product = page.wait_for_selector('.card')
     print("product are displayed")
 
+
     product.click()
     print('product Selected')
+
 
     product_name = page.wait_for_selector("h1")
     assert product_name.is_visible()
@@ -29,8 +31,7 @@ with sync_playwright() as p:
     assert product_description.is_visible()
     print("Product description:", product_description.inner_text())
 
-
-    #add to cart
+   
 
     add_to_cart = page.wait_for_selector("[data-test='add-to-cart']")
     assert add_to_cart.is_visible()
