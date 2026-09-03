@@ -173,7 +173,7 @@ with sync_playwright() as p:
 
 
         # Generate unique email for valid registration
-        email = test_data["emai"]
+        email = test_data["email"]
         if test_data["valid"]:
             email = f"deepak_{random.randint(100000, 999999)}@gmail.com"
             print("Generated email:", email)
