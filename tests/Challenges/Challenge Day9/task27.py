@@ -11,14 +11,12 @@ def find_add_to_cart(page):
             return locator.first
     raise Exception("Add to Cart button was not found")
 
-
 def test_amazon_strict_mode():
 
     with sync_playwright() as p:
 
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
-    
         page.goto("https://www.amazon.in/",wait_until="domcontentloaded")
         print("Amazon opened")
 
@@ -45,7 +43,6 @@ def test_amazon_strict_mode():
             print("Strict Mode Problem!")
             print("The locator matches multiple buttons.")
             print("Playwright cannot identify one specific button.")
-
         print()
         print("Searching for Add to Cart...")
         add_to_cart = find_add_to_cart(page)

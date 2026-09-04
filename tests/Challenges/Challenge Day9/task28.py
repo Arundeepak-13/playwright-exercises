@@ -3,7 +3,6 @@ from playwright.sync_api import sync_playwright, expect
 BASE_URL = "https://practicesoftwaretesting.com/"
 PRODUCT_NAME = "Claw Hammer"
 
-
 def test_product_cart():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -43,7 +42,6 @@ def test_product_cart():
         add_to_cart = page.get_by_role("button",name="Add to cart",exact=True)
         expect(add_to_cart).to_be_visible()
         print("Add to Cart button found")
-
         add_to_cart.click()
         print("Product added to cart")
 
